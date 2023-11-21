@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SplitLogin">
+
+    <fragment
+        android:id="@+id/SplitLogin"
+        android:name="com.example.navigationexperiment.SplitLoginFragment"
+        android:label="Split Login"
+        tools:layout="@layout/fragment_split_login">
+
+        <action
+            android:id="@+id/action_email_verification"
+            app:destination="@id/EmailVerification" />
+
+        <action
+            android:id="@+id/action_forgot_password"
+            app:destination="@id/ForgotPassword" />
+
+        <action
+            android:id="@+id/action_signup"
+            app:destination="@id/Signup" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/EmailVerification"
+        android:name="com.example.navigationexperiment.EmailVerificationFragment"
+        android:label="Email verification"
+        tools:layout="@layout/fragment_email_verification">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ForgotPassword"
+        android:name="com.example.navigationexperiment.ForgotPasswordFragment"
+        android:label="ForgotPassword"
+        tools:layout="@layout/fragment_forgot_password">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/Signup"
+        android:name="com.example.navigationexperiment.SignUpFragment"
+        android:label="Signup"
+        tools:layout="@layout/fragment_sign_up">
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/my_dialog_fragment"
+        android:name="com.example.navigationexperiment.DialogFragment"
+        android:label="dialog"
+        tools:layout="@layout/fragment_dialog">
+        <action
+            android:id="@+id/myaction"
+            app:destination="@+id/another_destination" />
+
+    </dialog>
+
+    <!--this destination will be end of this nav_graph and for another flow we need to
+    create new nav_graph -->
+    <activity
+        android:id="@+id/dashboard_activity"
+        android:name="com.example.navigationexperiment.DashboardActivity"
+        android:label="dashboard"
+        app:targetPackage="${applicationId}"
+        tools:layout="@layout/activity_dashboard">
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </activity>
+
+</navigation>

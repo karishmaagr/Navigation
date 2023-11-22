@@ -39,11 +39,11 @@ class SplitLoginFragment : Fragment() {
 
         binding.apply {
             btnForgotPassword.setOnClickListener {
-                it.findNavController().navigate(R.id.action_forgot_password)
+                it.findNavController().navigate(R.id.action_forgot_password, bundleOf("email" to email.text.toString()))
             }
 
             btnEmailVerification.setOnClickListener {
-                it.findNavController().navigate(R.id.action_email_verification)
+                it.findNavController().navigate(R.id.action_email_verification, bundleOf("email" to email.text.toString()))
             }
 
             btnSignup.setOnClickListener {

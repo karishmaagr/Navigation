@@ -30,6 +30,10 @@
         android:label="Email verification"
         tools:layout="@layout/fragment_email_verification">
 
+        <argument
+            android:name="email"
+            app:argType="string" />
+
     </fragment>
 
     <fragment
@@ -37,6 +41,10 @@
         android:name="com.example.navigationexperiment.ForgotPasswordFragment"
         android:label="ForgotPassword"
         tools:layout="@layout/fragment_forgot_password">
+
+        <argument
+            android:name="email"
+            app:argType="string" />
 
     </fragment>
 

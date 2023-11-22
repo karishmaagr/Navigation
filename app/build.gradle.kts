@@ -46,6 +46,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     val nav_version = "2.7.5"
+    val compose_ui_version = "1.3.3"
 
     // Java language implementation
     implementation("androidx.navigation:navigation-fragment:$nav_version")
@@ -63,6 +64,11 @@ dependencies {
 
     // Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation("androidx.compose.ui:ui:$compose_ui_version")
+    implementation ("androidx.compose.ui:ui-tooling-preview:$compose_ui_version")
+    implementation ("androidx.compose.material:material:1.3.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

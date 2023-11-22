@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/SplitLogin"
-        android:name="com.example.navigationexperiment.SplitLoginFragment"
+        android:name="com.example.navigationexperiment.login.SplitLoginFragment"
         android:label="Split Login"
         tools:layout="@layout/fragment_split_login">
 
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/EmailVerification"
-        android:name="com.example.navigationexperiment.EmailVerificationFragment"
+        android:name="com.example.navigationexperiment.login.EmailVerificationFragment"
         android:label="Email verification"
         tools:layout="@layout/fragment_email_verification">
 
@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/ForgotPassword"
-        android:name="com.example.navigationexperiment.ForgotPasswordFragment"
+        android:name="com.example.navigationexperiment.login.ForgotPasswordFragment"
         android:label="ForgotPassword"
         tools:layout="@layout/fragment_forgot_password">
 
@@ -50,7 +50,7 @@
 
     <fragment
         android:id="@+id/Signup"
-        android:name="com.example.navigationexperiment.SignUpFragment"
+        android:name="com.example.navigationexperiment.login.SignUpFragment"
         android:label="Signup"
         tools:layout="@layout/fragment_sign_up">
 

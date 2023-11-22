@@ -1,7 +1,8 @@
-package com.example.navigationexperiment
+package com.example.navigationexperiment.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.navigationexperiment.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

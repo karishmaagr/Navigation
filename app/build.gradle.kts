@@ -30,11 +30,15 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.2"
+    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
     buildFeatures {
         viewBinding = true
+        compose = true
     }
 }
 
@@ -46,8 +50,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     val nav_version = "2.7.5"
-    val compose_ui_version = "1.3.3"
-
+    val compose_ui_version = "1.5.2"
+    val accompainst_version = "0.28.0"
     // Java language implementation
     implementation("androidx.navigation:navigation-fragment:$nav_version")
     implementation("androidx.navigation:navigation-ui:$nav_version")
@@ -61,14 +65,16 @@ dependencies {
 
     // Testing Navigation
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
-
     // Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
-
-    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation("androidx.activity:activity-compose:1.8.1")
     implementation("androidx.compose.ui:ui:$compose_ui_version")
-    implementation ("androidx.compose.ui:ui-tooling-preview:$compose_ui_version")
-    implementation ("androidx.compose.material:material:1.3.1")
+    implementation("androidx.compose.ui:ui-tooling-preview:$compose_ui_version")
+    implementation("androidx.compose.material:material:$compose_ui_version")
+
+    implementation("com.google.accompanist:accompanist-flowlayout:$accompainst_version")
+    implementation("androidx.compose.material:material-icons-extended:$compose_ui_version")
+    implementation("androidx.navigation:navigation-compose:2.7.5")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

@@ -71,7 +71,7 @@
     create new nav_graph -->
     <activity
         android:id="@+id/dashboard_activity"
-        android:name="com.example.navigationexperiment.DashboardActivity"
+        android:name="com.example.navigationexperiment.dashboard.DashboardActivity"
         android:label="dashboard"
         app:targetPackage="${applicationId}"
         tools:layout="@layout/activity_dashboard">

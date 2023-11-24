@@ -56,6 +56,7 @@ import com.example.navigationexperiment.commonUi.AppIconDrawable
 import com.example.navigationexperiment.commonUi.SpacerHeight
 import com.example.navigationexperiment.commonUi.SpacerWidth
 import com.example.navigationexperiment.models.popularProductList
+import com.example.navigationexperiment.navigation.Routes
 import com.example.navigationexperiment.theme.Background
 import com.example.navigationexperiment.theme.DarkOrange
 import com.example.navigationexperiment.theme.GrayColor
@@ -357,8 +358,7 @@ fun BottomBarItem(
                 title = stringResource(R.string.add_to_ba),
                 modifier = Modifier.weight(0.7f)
             ) {
-                //TODO karishma add navigation here
-//                navHostController.navigate(R.id.)
+                navHostController.navigate(Routes.CheckoutScreen)
             }
         }
     }

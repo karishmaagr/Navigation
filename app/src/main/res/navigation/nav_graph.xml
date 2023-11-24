@@ -23,6 +23,10 @@
             android:id="@+id/action_signup"
             app:destination="@id/Signup" />
 
+        <action
+            android:id="@+id/action_compose_nav"
+            app:destination="@id/compose_nav" />
+
     </fragment>
     <fragment
         android:id="@+id/EmailVerification"
@@ -78,6 +82,12 @@
         <argument
             android:name="email"
             app:argType="string" />
+    </activity>
+   <activity
+        android:id="@+id/compose_nav"
+        android:name="com.example.navigationexperiment.ComposeActivity"
+        android:label="compose"
+        app:targetPackage="${applicationId}">
     </activity>
 
 </navigation>

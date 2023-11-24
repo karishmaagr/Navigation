@@ -44,10 +44,11 @@ class SplitLoginFragment : Fragment() {
             }
 
             btnLogin.setOnClickListener {
-                it.findNavController().navigate(
+                /*it.findNavController().navigate(
                     R.id.dashboard_activity,
                     bundleOf("email" to email.text.toString())
-                )
+                )*/
+                it.findNavController().navigate(R.id.action_compose_nav)
             }
         }
     }

@@ -61,6 +61,7 @@ import com.example.navigationexperiment.models.Rooms
 import com.example.navigationexperiment.models.categoryList
 import com.example.navigationexperiment.models.popularProductList
 import com.example.navigationexperiment.models.roomList
+import com.example.navigationexperiment.navigation.Routes
 import com.example.navigationexperiment.theme.DarkOrange
 import com.example.navigationexperiment.theme.LightGray
 import com.example.navigationexperiment.theme.PoppinFont
@@ -137,8 +138,7 @@ fun ProductRow(
         ) {
             popularProductList.forEach {
                 PopularProductGridView(it) {
-                    //TODO karishma add navigation
-//                    navHostController.navigate(Routes.ProductScreen)
+                    navHostController.navigate(Routes.ProductScreen)
                 }
             }
         }

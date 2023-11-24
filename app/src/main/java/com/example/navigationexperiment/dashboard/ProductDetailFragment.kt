@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import com.example.navigationexperiment.R
 import com.example.navigationexperiment.databinding.FragmentProductDetailBinding
 import com.example.navigationexperiment.theme.NavigationAppTheme
 import com.example.navigationexperiment.ui.fragmentFlow.ProductDetailScreenFragment
@@ -19,9 +21,9 @@ class ProductDetailFragment : Fragment() {
         binding.layout.setContent {
             NavigationAppTheme {
                 ProductDetailScreenFragment(onClick = {
-
+                    binding.layout.findNavController().navigate(R.id.action_checkout)
                 }, onBack = {
-
+                    binding.layout.findNavController().navigateUp()
                 })
             }
         }

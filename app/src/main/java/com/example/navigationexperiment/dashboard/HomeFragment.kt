@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import com.example.navigationexperiment.R
 import com.example.navigationexperiment.databinding.FragmentHomeBinding
 import com.example.navigationexperiment.theme.NavigationAppTheme
 import com.example.navigationexperiment.ui.fragmentFlow.HomeScreenFragment
@@ -21,7 +23,7 @@ class HomeFragment : Fragment() {
         binding.layout.setContent {
             NavigationAppTheme {
                 HomeScreenFragment() {
-
+                    binding.layout.findNavController().navigate(R.id.action_home_to_detail)
                 }
             }
         }

@@ -333,7 +333,7 @@ fun BottomBarItem(
             AppButton(
                 title = stringResource(R.string.add_to_ba), modifier = Modifier.weight(0.7f)
             ) {
-                onClick
+                onClick()
             }
         }
     }

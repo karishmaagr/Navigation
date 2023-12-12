@@ -60,6 +60,11 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
+    implementation ("com.google.dagger:hilt-android:2.28-alpha")
+
+    implementation("androidx.hilt:hilt-common:1.0.0-SNAPSHOT")
+    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-SNAPSHOT")
+
     // Feature module Support
     implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
 

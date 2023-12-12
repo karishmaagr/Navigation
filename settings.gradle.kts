@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "NavigationExperiment"
 include(":app")
- 
+include(":home")

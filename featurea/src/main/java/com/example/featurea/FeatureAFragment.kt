@@ -1,4 +1,4 @@
-package com.abhriya.featurea
+package com.example.featurea
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,29 +7,31 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.core.FeatureScreenBRouteContract
+import com.example.featurea.databinding.FragmentFeatureABinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_feature_a.*
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class FeatureAFragment : Fragment() {
+    private lateinit var binding: FragmentFeatureABinding
 
     @Inject
     lateinit var featureScreenBRouteContract: FeatureScreenBRouteContract
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_feature_a, container, false)
+        binding = FragmentFeatureABinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         println("the passed data to fragment a is ${FeatureAFragmentArgs.fromBundle(requireArguments()).argAValue}")
-        buttonOpenFeatureScreenB.setOnClickListener {
+        binding.buttonOpenFeatureScreenB.setOnClickListener {
             featureScreenBRouteContract.show("as", findNavController())
         }
 

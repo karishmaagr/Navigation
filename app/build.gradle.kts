@@ -4,7 +4,6 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
-
 }
 
 android {
@@ -79,9 +78,11 @@ dependencies {
     implementation("com.google.accompanist:accompanist-flowlayout:$accompainst_version")
     implementation("androidx.compose.material:material-icons-extended:$compose_ui_version")
     implementation("androidx.navigation:navigation-compose:2.7.5")
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
 
+    implementation(project(":core"))
+    implementation(project(":featurea"))
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

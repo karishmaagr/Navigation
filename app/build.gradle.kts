@@ -2,6 +2,9 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -40,6 +43,7 @@ android {
         viewBinding = true
         compose = true
     }
+
 }
 
 dependencies {
@@ -53,8 +57,8 @@ dependencies {
     val compose_ui_version = "1.5.2"
     val accompainst_version = "0.28.0"
     // Java language implementation
-    implementation("androidx.navigation:navigation-fragment:$nav_version")
-    implementation("androidx.navigation:navigation-ui:$nav_version")
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
@@ -75,6 +79,9 @@ dependencies {
     implementation("com.google.accompanist:accompanist-flowlayout:$accompainst_version")
     implementation("androidx.compose.material:material-icons-extended:$compose_ui_version")
     implementation("androidx.navigation:navigation-compose:2.7.5")
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

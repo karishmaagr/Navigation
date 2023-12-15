@@ -17,3 +17,5 @@ rootProject.name = "NavigationExperiment"
 include(":app")
 include(":featurea")
 include(":core")
+include(":featureb")
+include(":featureb")

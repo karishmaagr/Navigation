@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/featurea" />
+            <option value="$PROJECT_DIR$/featureb" />
           </set>
         </option>
       </GradleProjectSettings>

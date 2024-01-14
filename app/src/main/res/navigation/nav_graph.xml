@@ -12,6 +12,14 @@
         android:label="Split Login"
         tools:layout="@layout/fragment_split_login">
 
+        <deepLink
+            app:uri="android-app://com.example.navigationexperimen/SplitLogin" />
+        <!--  val request = NavDeepLinkRequest.Builder
+        .fromUri("android-app://example.google.app/settings_fragment_two".toUri())
+        .build()
+    findNavController().navigate(request)
+    -->
+
         <action
             android:id="@+id/action_email_verification"
             app:destination="@id/EmailVerification" />

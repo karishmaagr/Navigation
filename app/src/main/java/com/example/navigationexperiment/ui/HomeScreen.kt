@@ -52,6 +52,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.core.FeatureScreenARouteContract
 import com.example.navigationexperiment.R
 import com.example.navigationexperiment.commonUi.SpacerHeight
 import com.example.navigationexperiment.commonUi.SpacerWidth
@@ -71,7 +72,8 @@ import com.google.accompanist.flowlayout.MainAxisAlignment
 
 @Composable
 fun HomeScreen(
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    featureScreenARouteContract: FeatureScreenARouteContract
 ) {
     var search by remember { mutableStateOf("") }
     LazyColumn(
@@ -89,11 +91,11 @@ fun HomeScreen(
             }
         }
         item {
-            CategoryRow()
+            CategoryRow(navHostController,featureScreenARouteContract)
         }
         item {
             SpacerHeight(20.dp)
-            ProductRow(navHostController)
+            ProductRow(navHostController,featureScreenARouteContract)
         }
         item {
             Banner()
@@ -108,11 +110,13 @@ fun HomeScreen(
 
 @Composable
 fun CategoryRow(
+navHostController: NavHostController,
+featureScreenARouteContract: FeatureScreenARouteContract
 
 ) {
 
     Column {
-        CommonTitle(title = stringResource(R.string.categories))
+        CommonTitle(title = stringResource(R.string.categories),navHostController,featureScreenARouteContract)
         SpacerHeight(20.dp)
         LazyRow {
             items(categoryList, key = { it.id }) {
@@ -125,10 +129,12 @@ fun CategoryRow(
 
 @Composable
 fun ProductRow(
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    featureScreenARouteContract: FeatureScreenARouteContract
+
 ) {
     Column {
-        CommonTitle(title = stringResource(R.string.popular))
+        CommonTitle(title = stringResource(R.string.popular),navHostController,featureScreenARouteContract)
         SpacerHeight(20.dp)
 
         FlowRow(
@@ -258,7 +264,8 @@ fun PopularProductGridView(
 
 @Composable
 fun CommonTitle(
-    title: String, onClick: () -> Unit = {}
+    title: String, navHostController: NavHostController,
+    featureScreenARouteContract: FeatureScreenARouteContract
 ) {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
         Text(
@@ -270,7 +277,8 @@ fun CommonTitle(
                 textAlign = TextAlign.Center
             ), modifier = Modifier.align(CenterVertically)
         )
-        TextButton(onClick = { onClick() }) {
+        TextButton(onClick = {//Scenario when navigating to diff module)
+            featureScreenARouteContract.show("passing from main",navHostController) }){
             Text(
                 text = stringResource(R.string.see_all), style = TextStyle(
                     color = DarkOrange,

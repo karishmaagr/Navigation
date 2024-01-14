@@ -5,12 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.core.FeatureScreenARouteContract
 import com.example.navigationexperiment.databinding.FragmentForgotPasswordBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class ForgotPasswordFragment : Fragment() {
     private var email: String? = null
     private lateinit var binding: FragmentForgotPasswordBinding
 
+    @Inject
+    lateinit var featureScreenARouteContract: FeatureScreenARouteContract
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -30,6 +37,9 @@ class ForgotPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.text.text = "Forgot password $email"
+        binding.text.setOnClickListener {
+            featureScreenARouteContract.show("passing from fp",findNavController())
+        }
     }
 
     companion object {

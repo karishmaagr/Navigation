@@ -8,10 +8,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import com.example.core.FeatureScreenARouteContract
 import com.example.navigationexperiment.navigation.AppNavigation
 import com.example.navigationexperiment.theme.NavigationAppTheme
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class ComposeActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var featureScreenARouteContract: FeatureScreenARouteContract
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -23,7 +31,7 @@ class ComposeActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background,
                 ) {
-                    AppNavigation()
+                    AppNavigation(featureScreenARouteContract)
                 }
             }
         }

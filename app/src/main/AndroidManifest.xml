@@ -23,9 +23,10 @@
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <data
-                    android:host="navigationexp.com"
-                    android:scheme="https" />
-
+                    android:scheme="navigation"
+                    android:host="fragment"
+                    android:pathPattern="/.*"
+                    />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -41,8 +42,10 @@
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <data
-                    android:host="navigationexp.com"
-                    android:scheme="https" />
+                    android:scheme="navigation"
+                    android:host="fragment"
+                    android:pathPattern="/.*"
+                    />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -56,8 +59,10 @@
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <data
-                    android:host="navigationexp.com"
-                    android:scheme="https" />
+                    android:scheme="navigation"
+                    android:host="fragment"
+                    android:pathPattern="/.*"
+                    />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />

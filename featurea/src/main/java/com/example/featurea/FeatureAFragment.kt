@@ -23,7 +23,6 @@ class FeatureAFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFeatureABinding.inflate(inflater, container, false)
-
         return binding.root
     }
 

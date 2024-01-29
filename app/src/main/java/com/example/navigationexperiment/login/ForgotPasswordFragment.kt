@@ -38,6 +38,7 @@ class ForgotPasswordFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.text.text = "Forgot password $email"
         binding.text.setOnClickListener {
+            //scenario , when app module calls feature module
             featureScreenARouteContract.show("passing from fp",findNavController())
         }
     }

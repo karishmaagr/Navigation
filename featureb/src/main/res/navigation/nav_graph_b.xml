@@ -15,37 +15,4 @@
             app:argType="string"
             android:defaultValue="0" />
     </fragment>
-
-    <fragment
-        android:id="@+id/featureCFragment"
-        android:name="com.example.featureb.FeatureBFragment"
-        android:label="fragment_feature_b"
-        tools:layout="@layout/fragment_feature_b" >
-        <argument
-            android:name="argBValue"
-            app:argType="string"
-            android:defaultValue="0" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/featureCFragment"
-        android:name="com.example.featureb.FeatureBFragment"
-        android:label="fragment_feature_b"
-        tools:layout="@layout/fragment_feature_b" >
-        <argument
-            android:name="argBValue"
-            app:argType="string"
-            android:defaultValue="0" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/featureCFragment"
-        android:name="com.example.featureb.FeatureBFragment"
-        android:label="fragment_feature_b"
-        tools:layout="@layout/fragment_feature_b" >
-        <argument
-            android:name="argBValue"
-            app:argType="string"
-            android:defaultValue="0" />
-    </fragment>
 </navigation>

@@ -10,9 +10,12 @@
         android:name="com.example.featurea.FeatureAFragment"
         android:label="fragment_feature_a"
         tools:layout="@layout/fragment_feature_a">
+
+        <deepLink app:uri="navigation://fragment/featureAFragment/?argAValue={argAValue}" />
+
         <argument
             android:name="argAValue"
-            app:argType="string"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="string" />
     </fragment>
 </navigation>

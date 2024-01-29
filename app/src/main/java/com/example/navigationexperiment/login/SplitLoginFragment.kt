@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -27,15 +28,20 @@ class SplitLoginFragment : Fragment() {
         binding.apply {
             btnForgotPassword.setOnClickListener {
                 it.findNavController().navigate(
-                    R.id.action_forgot_password,
-                    bundleOf("email" to email.text.toString())
+                    R.id.action_forgot_password, bundleOf("email" to email.text.toString())
                 )
             }
 
             btnEmailVerification.setOnClickListener {
+                //Scenario when using defined classes
+                if(email.text?.isEmpty() == true){
+                    Toast.makeText(requireContext(), "Please enter email",Toast.LENGTH_LONG).show()
+                    return@setOnClickListener
+                }
+                val action =
+                    SplitLoginFragmentDirections.actionEmailVerification(email.text.toString())
                 it.findNavController().navigate(
-                    R.id.action_email_verification,
-                    bundleOf("email" to email.text.toString())
+                    action
                 )
             }
 
@@ -59,8 +65,7 @@ class SplitLoginFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSplitLoginBinding.inflate(inflater, container, false)
@@ -69,11 +74,10 @@ class SplitLoginFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SplitLoginFragment().apply {
-                arguments = Bundle().apply {
+        fun newInstance(param1: String, param2: String) = SplitLoginFragment().apply {
+            arguments = Bundle().apply {
 
-                }
             }
+        }
     }
 }

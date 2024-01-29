@@ -14,6 +14,7 @@ fun AppNavigation(featureScreenARouteContract: FeatureScreenARouteContract) {
 
     val navHostController = rememberNavController()
 
+    //Scenario, Navigating from compose view to compose view
     NavHost(navController = navHostController, startDestination = Routes.HomeScreen) {
         composable(Routes.HomeScreen) {
             HomeScreen(navHostController,featureScreenARouteContract)
